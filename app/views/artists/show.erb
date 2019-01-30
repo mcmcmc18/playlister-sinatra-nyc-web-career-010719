@@ -1,0 +1,13 @@
+<!-- responds with a 200 status code (FAILED - 2)
+ displays the artist's songs (FAILED - 3)
+ displays the artist's genres (FAILED - 4)
+ contains links to each song's show page (FAILED - 5)
+ contains links to each genre's show page (FAILED - 6) -->
+ <p>Artist: <%= @artist.name %> <p>
+ <% @artist.genres.each do |genre| %>
+ <p>Genre: <a href ="/genres/<%= genre.name %>"> <%= genre.name %></a> </p>
+<% end %>
+
+<% @artist.songs.each do |song| %>
+ <p>Song: <a href ="/songs/<%= song.slug %>"> <%= song.name %> </a></p>
+ <% end %>
